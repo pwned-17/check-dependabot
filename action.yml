@@ -19,7 +19,7 @@ outputs:
   low_alerts:
     description: "Open Lower Alerts"
   repo_url:
-    decription: " Gives the repo  url of Dependabot Alerts "
+    description: " Gives the repo  url of Dependabot Alerts "
 runs:
   using: "docker"
   image: "Dockerfile"

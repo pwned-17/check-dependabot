@@ -64,6 +64,7 @@ def main():
     repo = os.environ["GITHUB_REPOSITORY"]
     repoName = repo.split("/")[-1]                      #  Cleans the in-case we get 'owner/repo' format
     repoUrl="https://github.com/{}/security/dependabot".format(repoName)
+    pp.pprint(repoUrl)
     # Query GitHub for full alerts breakdown
     alerts=get_alerts(repoName,owner,token)
     pp.pprint(alerts)

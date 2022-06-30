@@ -82,6 +82,8 @@ def main():
     print(f"::set-output name=moderate_alerts::{statsDict['moderate_alerts']}")
     print(f"::set-output name=low_alerts::{statsDict['low_alerts']}")
     print(f"::set-output name=repo_url::{repoUrl}")
+    print(f"::set-output name=repo_name::{repoName}")
+    
     #Create markdown summary
     summaryFile = os.environ["GITHUB_STEP_SUMMARY"]  #https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#adding-a-job-summary
     summary = {'Severity': ['CRITICAL','HIGH','MODERATE','LOW'], 'Open Issues': list( map(statsDict.get,['critical_alerts','high_alerts','moderate_alerts','low_alerts']))}

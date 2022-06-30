@@ -91,7 +91,7 @@ def main():
     summary=summary.set_index('Severity')
     summaryMD=summary.to_markdown()
     summaryText=f"## ⚠ Open Dependabot Alerts\n There are currently {statsDict['total_alerts']} open security [vulnerabilities](https://github.com/{repo}/security/dependabot).\n"
-    print(f"::set-output name=summary::{summaryText}")
+    print(f"::set-output name=summary::{summaryMD}")
     with open(summaryFile, "a") as myfile:
         myfile.write(summaryText)
         myfile.write(summaryMD)
